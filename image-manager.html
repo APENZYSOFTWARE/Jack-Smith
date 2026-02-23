@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StyleHub Image Manager</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .image-manager {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f8f9fa;
+            min-height: 100vh;
+        }
+        
+        .manager-header {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ff8e53 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .manager-header h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        
+        .upload-section {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        .upload-area {
+            border: 3px dashed #ff6b6b;
+            border-radius: 15px;
+            padding: 40px;
+            text-align: center;
+            background: #fff5f5;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .upload-area:hover {
+            background: #ffe0e0;
+            border-color: #ff5252;
+        }
+        
+        .upload-area.dragover {
+            background: #e8f5e8;
+            border-color: #28a745;
+        }
+        
+        .upload-icon {
+            font-size: 64px;
+            color: #ff6b6b;
+            margin-bottom: 20px;
+        }
+        
+        .upload-text {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .upload-subtext {
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .file-input {
+            display: none;
+        }
+        
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .image-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .image-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .image-preview {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background: #f8f9fa;
+        }
+        
+        .image-info {
+            padding: 20px;
+        }
+        
+        .image-name {
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .image-details {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .image-actions {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .btn {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary {
+            background: #ff6b6b;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #ff5252;
+        }
+        
+        .btn-secondary {
+            background: #f8f9fa;
+            color: #333;
+            border: 1px solid #ddd;
+        }
+        
+        .btn-secondary:hover {
+            background: #e9ecef;
+        }
+        
+        .guidelines {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .guidelines h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        .guidelines ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .guidelines li {
+            padding: 10px 0;
+            border-bottom: 1px solid #f8f9fa;
+            color: #666;
+        }
+        
+        .guidelines li:before {
+            content: "✓";
+            color: #28a745;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        .color-palette {
+            display: flex;
+            gap: 10px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        
+        .color-swatch {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 3px solid #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="image-manager">
+        <div class="manager-header">
+            <h1>🖼️ StyleHub Image Manager</h1>
+            <p>Upload and manage your fashion product images</p>
+        </div>
+
+        <div class="upload-section">
+            <div class="upload-area" id="uploadArea">
+                <div class="upload-icon">📸</div>
+                <div class="upload-text">Drag & Drop Images Here</div>
+                <div class="upload-subtext">or click to browse (JPG, PNG, WebP - Max 10MB)</div>
+                <input type="file" id="fileInput" class="file-input" multiple accept="image/*">
+            </div>
+        </div>
+
+        <div class="guidelines">
+            <h2>📋 Image Guidelines</h2>
+            <div class="color-palette">
+                <div class="color-swatch" style="background: #FF6B6B;" title="Primary Red"></div>
+                <div class="color-swatch" style="background: #4ECDC4;" title="Turquoise"></div>
+                <div class="color-swatch" style="background: #45B7D1;" title="Sky Blue"></div>
+                <div class="color-swatch" style="background: #96CEB4;" title="Mint"></div>
+                <div class="color-swatch" style="background: #FFEAA7;" title="Warm Yellow"></div>
+                <div class="color-swatch" style="background: #DDA0DD;" title="Lavender"></div>
+                <div class="color-swatch" style="background: #FFB6C1;" title="Pink"></div>
+                <div class="color-swatch" style="background: #F8B739;" title="Orange"></div>
+            </div>
+            <ul>
+                <li>Use clean, minimalist backgrounds (white, light gray, or subtle gradients)</li>
+                <li>Ensure products are well-lit with soft, even lighting</li>
+                <li>Include multiple angles: front, back, side, and detail shots</li>
+                <li>Maintain consistent style across all product categories</li>
+                <li>Use bold, sparkling colors that match your brand theme</li>
+                <li>Optimize for web: 800x800px for main images, 400x400px for thumbnails</li>
+                <li>Include lifestyle shots showing products in use</li>
+                <li>Ensure accurate color representation</li>
+                <li>File formats: JPG for photos, PNG for graphics with transparency</li>
+            </ul>
+        </div>
+
+        <div class="image-grid" id="imageGrid">
+            <!-- Uploaded images will appear here -->
+        </div>
+    </div>
+
+    <script>
+        let uploadedImages = [];
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            setupUploadArea();
+            loadExistingImages();
+        });
+        
+        // Setup upload area
+        function setupUploadArea() {
+            const uploadArea = document.getElementById('uploadArea');
+            const fileInput = document.getElementById('fileInput');
+            
+            // Click to upload
+            uploadArea.addEventListener('click', () => fileInput.click());
+            
+            // Drag and drop
+            uploadArea.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                uploadArea.classList.add('dragover');
+            });
+            
+            uploadArea.addEventListener('dragleave', () => {
+                uploadArea.classList.remove('dragover');
+            });
+            
+            uploadArea.addEventListener('drop', (e) => {
+                e.preventDefault();
+                uploadArea.classList.remove('dragover');
+                handleFiles(e.dataTransfer.files);
+            });
+            
+            // File selection
+            fileInput.addEventListener('change', (e) => {
+                handleFiles(e.target.files);
+            });
+        }
+        
+        // Handle file upload
+        function handleFiles(files) {
+            Array.from(files).forEach(file => {
+                if (file.type.startsWith('image/')) {
+                    processImage(file);
+                }
+            });
+        }
+        
+        // Process image
+        function processImage(file) {
+            const reader = new FileReader();
+            
+            reader.onload = function(e) {
+                const imageData = {
+                    id: Date.now() + Math.random(),
+                    name: file.name,
+                    size: formatFileSize(file.size),
+                    type: file.type,
+                    url: e.target.result,
+                    uploadDate: new Date().toISOString()
+                };
+                
+                uploadedImages.push(imageData);
+                saveImages();
+                displayImage(imageData);
+            };
+            
+            reader.readAsDataURL(file);
+        }
+        
+        // Display image
+        function displayImage(imageData) {
+            const imageGrid = document.getElementById('imageGrid');
+            const imageCard = document.createElement('div');
+            imageCard.className = 'image-card';
+            
+            imageCard.innerHTML = `
+                <img src="${imageData.url}" alt="${imageData.name}" class="image-preview">
+                <div class="image-info">
+                    <div class="image-name">${imageData.name}</div>
+                    <div class="image-details">
+                        Size: ${imageData.size} | Type: ${imageData.type}
+                    </div>
+                    <div class="image-actions">
+                        <button class="btn btn-primary" onclick="copyImageUrl('${imageData.url}')">
+                            📋 Copy URL
+                        </button>
+                        <button class="btn btn-secondary" onclick="deleteImage(${imageData.id})">
+                            🗑️ Delete
+                        </button>
+                    </div>
+                </div>
+            `;
+            
+            imageGrid.appendChild(imageCard);
+        }
+        
+        // Copy image URL
+        function copyImageUrl(url) {
+            navigator.clipboard.writeText(url).then(() => {
+                alert('Image URL copied to clipboard!');
+            });
+        }
+        
+        // Delete image
+        function deleteImage(imageId) {
+            if (confirm('Are you sure you want to delete this image?')) {
+                uploadedImages = uploadedImages.filter(img => img.id !== imageId);
+                saveImages();
+                refreshImageGrid();
+            }
+        }
+        
+        // Refresh image grid
+        function refreshImageGrid() {
+            const imageGrid = document.getElementById('imageGrid');
+            imageGrid.innerHTML = '';
+            uploadedImages.forEach(image => displayImage(image));
+        }
+        
+        // Save to localStorage
+        function saveImages() {
+            localStorage.setItem('stylehub-images', JSON.stringify(uploadedImages));
+        }
+        
+        // Load existing images
+        function loadExistingImages() {
+            const saved = localStorage.getItem('stylehub-images');
+            if (saved) {
+                uploadedImages = JSON.parse(saved);
+                uploadedImages.forEach(image => displayImage(image));
+            }
+        }
+        
+        // Format file size
+        function formatFileSize(bytes) {
+            if (bytes === 0) return '0 Bytes';
+            const k = 1024;
+            const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+            const i = Math.floor(Math.log(bytes) / Math.log(k));
+            return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+        }
+    </script>
+</body>
+</html>
