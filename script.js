@@ -308,9 +308,24 @@ let wishlist = [];
 
 // Initialize the application
 document.addEventListener('DOMContentLoaded', function() {
-    initializeHeroSlider();
+    // Check authentication
+    checkAuth();
+    
+    // Load hero slider
+    loadHeroSlider();
+    
+    // Load featured products
     loadFeaturedProducts();
+    
+    // Setup event listeners
     setupEventListeners();
+    
+    // Load cart from localStorage
+    loadCart();
+    
+    // Load wishlist from localStorage
+    loadWishlist();
+    
     updateCartCount();
 });
 

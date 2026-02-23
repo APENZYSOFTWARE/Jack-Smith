@@ -23,9 +23,21 @@
                     <span><i class="fas fa-map-marker-alt"></i> Lagos, Nigeria</span>
                 </div>
                 <div class="user-actions">
-                    <a href="#login">Login</a>
-                    <a href="#register">Register</a>
-                    <span class="currency-display">₦ Naira</span>
+                    <div class="user-profile login-required" style="display: none;">
+                        <img src="https://picsum.photos/seed/default-user/32/32.jpg" alt="User" class="user-avatar">
+                        <span class="user-display">User</span>
+                        <div class="user-dropdown">
+                            <a href="#profile">My Profile</a>
+                            <a href="#orders">My Orders</a>
+                            <a href="#wishlist">Wishlist</a>
+                            <a href="#settings">Settings</a>
+                            <a href="#" onclick="logout()">Logout</a>
+                        </div>
+                    </div>
+                    <div class="auth-buttons logout-required">
+                        <a href="login.html" class="login-btn">Login</a>
+                        <a href="login.html" class="register-btn">Register</a>
+                    </div>
                 </div>
             </div>
             <nav class="main-nav">
@@ -37,8 +49,9 @@
                     <button type="button" id="searchBtn"><i class="fas fa-search"></i></button>
                 </div>
                 <div class="nav-icons">
-                    <a href="#wishlist" class="nav-icon"><i class="fas fa-heart"></i></a>
-                    <a href="#cart" class="nav-icon"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></a>
+                    <span class="currency-display">₦ Naira</span>
+                    <a href="#wishlist" class="nav-icon login-required" style="display: none;"><i class="fas fa-heart"></i></a>
+                    <a href="cart.html" class="nav-icon"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></a>
                 </div>
             </nav>
             <div class="category-nav">
