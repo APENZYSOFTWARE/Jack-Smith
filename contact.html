@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact StyleHub - Get in touch with our customer service team for support, inquiries, and assistance">
+    <meta name="keywords" content="contact, customer service, support, help, StyleHub">
+    <title>Contact Us - StyleHub</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="contact.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-top">
+                <div class="contact-info">
+                    <span><i class="fas fa-phone"></i> 080-6224-0288</span>
+                    <span><i class="fas fa-envelope"></i> imjustokon@gmail.com</span>
+                </div>
+                <div class="user-actions">
+                    <a href="#login">Login</a>
+                    <a href="#register">Register</a>
+                </div>
+            </div>
+            <nav class="main-nav">
+                <div class="logo">
+                    <h1><a href="index.html" style="color: #ff6b6b; text-decoration: none;">StyleHub</a></h1>
+                </div>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search for products..." id="searchInput">
+                    <button type="button" id="searchBtn"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="nav-icons">
+                    <a href="#wishlist" class="nav-icon"><i class="fas fa-heart"></i></a>
+                    <a href="cart.html" class="nav-icon"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></a>
+                </div>
+            </nav>
+            <div class="category-nav">
+                <ul class="category-list">
+                    <li><a href="products.html?category=men">Men</a></li>
+                    <li><a href="products.html?category=women">Women</a></li>
+                    <li><a href="products.html?category=kids">Kids</a></li>
+                    <li><a href="products.html?category=jewelry">Jewelry</a></li>
+                    <li><a href="products.html?category=watches">Watches</a></li>
+                    <li><a href="products.html?category=footwear">Footwear</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
+        <div class="container">
+            <nav>
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <span>Contact Us</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-header">
+                <h1>Get in Touch</h1>
+                <p>We're here to help! Reach out to us for any questions, concerns, or assistance.</p>
+            </div>
+
+            <div class="contact-layout">
+                <!-- Contact Information -->
+                <div class="contact-info">
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Phone Support</h3>
+                            <p><strong>Customer Service:</strong> 080-6224-0288</p>
+                            <p><strong>Hours:</strong> Monday - Friday, 9AM - 6PM</p>
+                            <p><strong>Weekend:</strong> Saturday, 10AM - 4PM</p>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Email Support</h3>
+                            <p><strong>General Inquiries:</strong> imjustokon@gmail.com</p>
+                            <p><strong>Response Time:</strong> Within 24 hours</p>
+                            <p><strong>Urgent Matters:</strong> Mark as "Urgent" in subject</p>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Office Location</h3>
+                            <p>123 Fashion Avenue</p>
+                            <p>Shopping District, Lagos</p>
+                            <p>Nigeria</p>
+                            <p><strong>Visiting Hours:</strong> Monday - Friday, 10AM - 5PM</p>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Business Hours</h3>
+                            <p><strong>Monday - Friday:</strong> 9:00 AM - 6:00 PM</p>
+                            <p><strong>Saturday:</strong> 10:00 AM - 4:00 PM</p>
+                            <p><strong>Sunday:</strong> Closed</p>
+                            <p><strong>Holidays:</strong> Closed on public holidays</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form">
+                    <div class="form-header">
+                        <h2>Send us a Message</h2>
+                        <p>Fill out the form below and we'll get back to you as soon as possible.</p>
+                    </div>
+
+                    <form id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name *</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name *</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+2348000000000">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Select a subject</option>
+                                <option value="order">Order Inquiry</option>
+                                <option value="product">Product Question</option>
+                                <option value="shipping">Shipping & Delivery</option>
+                                <option value="return">Returns & Refunds</option>
+                                <option value="payment">Payment Issue</option>
+                                <option value="account">Account Help</option>
+                                <option value="technical">Technical Support</option>
+                                <option value="partnership">Partnership Inquiry</option>
+                                <option value="feedback">Feedback & Suggestions</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="orderNumber">Order Number (if applicable)</label>
+                            <input type="text" id="orderNumber" name="orderNumber" placeholder="ORD-XXXXXX">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" rows="6" required placeholder="Please describe your inquiry in detail..."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="urgent" name="urgent">
+                                <span class="checkmark"></span>
+                                Mark as urgent
+                            </label>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="submit-btn">
+                                <i class="fas fa-paper-plane"></i>
+                                Send Message
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>Find quick answers to common questions about our products and services.</p>
+            </div>
+
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How can I track my order?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Once your order is shipped, you'll receive a tracking number via email. You can use this number to track your package on our website or the carrier's website. You can also track your order by logging into your account and viewing your order history.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What is your return policy?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We offer a 30-day return policy for most items. Products must be unused, in original packaging, and with all tags attached. To initiate a return, contact our customer service team with your order number. Refunds are processed within 5-7 business days after we receive the returned item.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Do you offer international shipping?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we ship to most countries worldwide. International shipping rates and delivery times vary by destination. You can check if we ship to your country during checkout. International orders may be subject to customs fees and import duties.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What payment methods do you accept?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We accept all major credit cards (Visa, MasterCard, American Express), PayPal, and various mobile money options. All payments are processed securely through our encrypted payment gateway. We also offer buy-now-pay-later options through selected partners.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How do I know if a product is in stock?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Product availability is shown on each product page. If an item is out of stock, you can sign up for notifications to be alerted when it becomes available again. Popular items may sell out quickly, so we recommend ordering promptly if you see something you like.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Can I cancel or modify my order?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Orders can be cancelled or modified within 2 hours of placement. After this time, the order enters our fulfillment process and cannot be changed. If you need to make changes after this period, you may need to return the item once received. Contact customer service immediately if you need assistance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Support Channels -->
+    <section class="support-channels">
+        <div class="container">
+            <div class="section-header">
+                <h2>Other Ways to Reach Us</h2>
+                <p>Connect with us on social media or use our self-service options.</p>
+            </div>
+
+            <div class="channels-grid">
+                <div class="channel-card">
+                    <div class="channel-icon">
+                        <i class="fab fa-facebook-messenger"></i>
+                    </div>
+                    <h3>Facebook Messenger</h3>
+                    <p>Get instant support through our Facebook page</p>
+                    <a href="#" class="channel-btn">Start Chat</a>
+                </div>
+
+                <div class="channel-card">
+                    <div class="channel-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <h3>WhatsApp</h3>
+                    <p>Chat with us on WhatsApp for quick assistance</p>
+                    <a href="#" class="channel-btn">Chat on WhatsApp</a>
+                </div>
+
+                <div class="channel-card">
+                    <div class="channel-icon">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                    <h3>Instagram DM</h3>
+                    <p>Follow us and send direct messages</p>
+                    <a href="#" class="channel-btn">Follow on Instagram</a>
+                </div>
+
+                <div class="channel-card">
+                    <div class="channel-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Live Chat</h3>
+                    <p>Chat with our support team in real-time</p>
+                    <a href="#" class="channel-btn">Start Live Chat</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>About StyleHub</h3>
+                    <p>Your premier destination for quality fashion and accessories at affordable prices.</p>
+                    <div class="ceo-info">
+                        <img src="https://picsum.photos/seed/ceo/100/100.jpg" alt="CEO" class="ceo-photo">
+                        <p>Founded with a passion for fashion and customer satisfaction.</p>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="blog.html">Fashion Blog</a></li>
+                        <li><a href="#shipping">Shipping Info</a></li>
+                        <li><a href="#returns">Returns</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> 080-6224-0288</li>
+                        <li><i class="fas fa-envelope"></i> imjustokon@gmail.com</li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#support">Support Center</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#linkedin"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 StyleHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="contact.js"></script>
+</body>
+</html>

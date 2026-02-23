@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="StyleHub Fashion Blog - Discover the latest fashion trends, style tips, and fashion advice for men, women, and kids">
+    <meta name="keywords" content="fashion blog, style tips, fashion trends, clothing advice, StyleHub, fashion guide">
+    <title>Fashion Blog - StyleHub</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="blog.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-top">
+                <div class="contact-info">
+                    <span><i class="fas fa-phone"></i> 080-6224-0288</span>
+                    <span><i class="fas fa-envelope"></i> imjustokon@gmail.com</span>
+                </div>
+                <div class="user-actions">
+                    <a href="#login">Login</a>
+                    <a href="#register">Register</a>
+                </div>
+            </div>
+            <nav class="main-nav">
+                <div class="logo">
+                    <h1><a href="index.html" style="color: #ff6b6b; text-decoration: none;">StyleHub</a></h1>
+                </div>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search for products..." id="searchInput">
+                    <button type="button" id="searchBtn"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="nav-icons">
+                    <a href="#wishlist" class="nav-icon"><i class="fas fa-heart"></i></a>
+                    <a href="cart.html" class="nav-icon"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></a>
+                </div>
+            </nav>
+            <div class="category-nav">
+                <ul class="category-list">
+                    <li><a href="products.html?category=men">Men</a></li>
+                    <li><a href="products.html?category=women">Women</a></li>
+                    <li><a href="products.html?category=kids">Kids</a></li>
+                    <li><a href="products.html?category=jewelry">Jewelry</a></li>
+                    <li><a href="products.html?category=watches">Watches</a></li>
+                    <li><a href="products.html?category=footwear">Footwear</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
+        <div class="container">
+            <nav>
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <span>Fashion Blog</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Blog Hero -->
+    <section class="blog-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Fashion Blog & Style Tips</h1>
+                <p>Discover the latest fashion trends, style guides, and expert advice to elevate your wardrobe and express your unique style.</p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">150+</span>
+                        <span class="stat-label">Fashion Articles</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">50K+</span>
+                        <span class="stat-label">Happy Readers</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">Weekly</span>
+                        <span class="stat-label">New Content</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://picsum.photos/seed/fashion-blog/600/400.jpg" alt="Fashion Blog">
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Categories -->
+    <section class="blog-categories">
+        <div class="container">
+            <div class="categories-header">
+                <h2>Explore by Category</h2>
+                <p>Find content that matches your style interests</p>
+            </div>
+            <div class="categories-grid">
+                <div class="category-card" data-category="trends">
+                    <div class="category-icon">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <h3>Latest Trends</h3>
+                    <p>Stay updated with the hottest fashion trends</p>
+                    <span class="category-count">25 articles</span>
+                </div>
+                <div class="category-card" data-category="style-tips">
+                    <div class="category-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Style Tips</h3>
+                    <p>Expert advice to enhance your personal style</p>
+                    <span class="category-count">40 articles</span>
+                </div>
+                <div class="category-card" data-category="seasonal">
+                    <div class="category-icon">
+                        <i class="fas fa-snowflake"></i>
+                    </div>
+                    <h3>Seasonal Fashion</h3>
+                    <p>Dress perfectly for every season</p>
+                    <span class="category-count">30 articles</span>
+                </div>
+                <div class="category-card" data-category="accessories">
+                    <div class="category-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3>Accessories</h3>
+                    <p>Complete your look with perfect accessories</p>
+                    <span class="category-count">20 articles</span>
+                </div>
+                <div class="category-card" data-category="sustainable">
+                    <div class="category-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Sustainable Fashion</h3>
+                    <p>Eco-friendly fashion choices and tips</p>
+                    <span class="category-count">15 articles</span>
+                </div>
+                <div class="category-card" data-category="celebrity">
+                    <div class="category-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Celebrity Style</h3>
+                    <p>Get inspired by celebrity fashion</p>
+                    <span class="category-count">20 articles</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Articles -->
+    <section class="featured-articles">
+        <div class="container">
+            <div class="section-header">
+                <h2>Featured Articles</h2>
+                <p>Our most popular and trending fashion content</p>
+            </div>
+            <div class="featured-grid">
+                <article class="featured-article main">
+                    <div class="article-image">
+                        <img src="https://picsum.photos/seed/summer-trends/800/500.jpg" alt="Summer Fashion Trends">
+                        <div class="article-badge">Featured</div>
+                    </div>
+                    <div class="article-content">
+                        <div class="article-meta">
+                            <span class="category">Trends</span>
+                            <span class="date">June 15, 2024</span>
+                            <span class="read-time">5 min read</span>
+                        </div>
+                        <h2>Ultimate Guide to Summer 2024 Fashion Trends</h2>
+                        <p>Discover the hottest trends that will dominate the summer season, from vibrant colors to sustainable fabrics that keep you stylish and comfortable.</p>
+                        <div class="article-author">
+                            <img src="https://picsum.photos/seed/author1/40/40.jpg" alt="Author">
+                            <div class="author-info">
+                                <span class="author-name">Sarah Johnson</span>
+                                <span class="author-title">Fashion Editor</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <div class="featured-articles-sidebar">
+                    <article class="featured-article small">
+                        <div class="article-image">
+                            <img src="https://picsum.photos/seed/minimalist-style/300/200.jpg" alt="Minimalist Style">
+                        </div>
+                        <div class="article-content">
+                            <div class="article-meta">
+                                <span class="category">Style Tips</span>
+                                <span class="date">June 12, 2024</span>
+                            </div>
+                            <h3>The Art of Minimalist Fashion: Less is More</h3>
+                            <p>Learn how to create a stunning wardrobe with fewer, better pieces.</p>
+                        </div>
+                    </article>
+
+                    <article class="featured-article small">
+                        <div class="article-image">
+                            <img src="https://picsum.photos/seed/accessories-guide/300/200.jpg" alt="Accessories Guide">
+                        </div>
+                        <div class="article-content">
+                            <div class="article-meta">
+                                <span class="category">Accessories</span>
+                                <span class="date">June 10, 2024</span>
+                            </div>
+                            <h3>Complete Guide to Accessorizing Your Outfits</h3>
+                            <p>Master the art of accessories to elevate any look instantly.</p>
+                        </div>
+                    </article>
+
+                    <article class="featured-article small">
+                        <div class="article-image">
+                            <img src="https://picsum.photos/seed/sustainable-fashion/300/200.jpg" alt="Sustainable Fashion">
+                        </div>
+                        <div class="article-content">
+                            <div class="article-meta">
+                                <span class="category">Sustainable</span>
+                                <span class="date">June 8, 2024</span>
+                            </div>
+                            <h3>10 Sustainable Fashion Brands to Support in 2024</h3>
+                            <p>Discover eco-conscious brands that don't compromise on style.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recent Articles -->
+    <section class="recent-articles">
+        <div class="container">
+            <div class="section-header">
+                <h2>Recent Articles</h2>
+                <div class="filter-controls">
+                    <select id="categoryFilter">
+                        <option value="all">All Categories</option>
+                        <option value="trends">Latest Trends</option>
+                        <option value="style-tips">Style Tips</option>
+                        <option value="seasonal">Seasonal Fashion</option>
+                        <option value="accessories">Accessories</option>
+                        <option value="sustainable">Sustainable Fashion</option>
+                        <option value="celebrity">Celebrity Style</option>
+                    </select>
+                    <select id="sortFilter">
+                        <option value="latest">Latest First</option>
+                        <option value="popular">Most Popular</option>
+                        <option value="trending">Trending</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="articles-grid" id="articlesGrid">
+                <!-- Articles will be dynamically loaded here -->
+            </div>
+
+            <div class="load-more">
+                <button id="loadMoreBtn" class="load-more-btn">
+                    <i class="fas fa-plus"></i>
+                    Load More Articles
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Signup -->
+    <section class="blog-newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <div class="newsletter-text">
+                    <h2>Stay Fashion-Forward</h2>
+                    <p>Get weekly fashion tips, trend alerts, and exclusive content delivered to your inbox.</p>
+                </div>
+                <div class="newsletter-form">
+                    <input type="email" placeholder="Enter your email address" id="newsletterEmail">
+                    <button id="newsletterSubscribe">Subscribe</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>About StyleHub</h3>
+                    <p>Your premier destination for quality fashion and accessories at affordable prices.</p>
+                    <div class="ceo-info">
+                        <img src="https://picsum.photos/seed/ceo/100/100.jpg" alt="CEO" class="ceo-photo">
+                        <p>Founded with a passion for fashion and customer satisfaction.</p>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="blog.html">Fashion Blog</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#shipping">Shipping Info</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> 080-6224-0288</li>
+                        <li><i class="fas fa-envelope"></i> imjustokon@gmail.com</li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#support">Support Center</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#linkedin"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 StyleHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="blog.js"></script>
+</body>
+</html>

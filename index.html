@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Premium fashion e-commerce platform offering men's, women's, and kids' clothing, jewelry, watches, and footwear. Quality products at affordable prices.">
+    <meta name="keywords" content="fashion, clothing, jewelry, watches, footwear, e-commerce, shopping">
+    <title>StyleHub - Premium Fashion Shopping Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-top">
+                <div class="contact-info">
+                    <span><i class="fas fa-phone"></i> 080-6224-0288</span>
+                    <span><i class="fas fa-envelope"></i> imjustokon@gmail.com</span>
+                </div>
+                <div class="user-actions">
+                    <a href="#login">Login</a>
+                    <a href="#register">Register</a>
+                </div>
+            </div>
+            <nav class="main-nav">
+                <div class="logo">
+                    <h1>StyleHub</h1>
+                </div>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search for products..." id="searchInput">
+                    <button type="button" id="searchBtn"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="nav-icons">
+                    <a href="#wishlist" class="nav-icon"><i class="fas fa-heart"></i></a>
+                    <a href="#cart" class="nav-icon"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></a>
+                </div>
+            </nav>
+            <div class="category-nav">
+                <ul class="category-list">
+                    <li><a href="#men">Men</a></li>
+                    <li><a href="#women">Women</a></li>
+                    <li><a href="#kids">Kids</a></li>
+                    <li><a href="#jewelry">Jewelry</a></li>
+                    <li><a href="#watches">Watches</a></li>
+                    <li><a href="#footwear">Footwear</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="hero">
+        <div class="hero-slider">
+            <div class="hero-slide active">
+                <div class="hero-content">
+                    <h2>Summer Sale - Up to 50% Off</h2>
+                    <p>Discover amazing deals on premium fashion items</p>
+                    <button class="cta-button">Shop Now</button>
+                </div>
+                <div class="hero-image">
+                    <img src="https://picsum.photos/seed/fashion1/1200/600.jpg" alt="Summer Sale">
+                </div>
+            </div>
+            <div class="hero-slide">
+                <div class="hero-content">
+                    <h2>New Collection 2024</h2>
+                    <p>Explore our latest arrivals and trending styles</p>
+                    <button class="cta-button">Explore Collection</button>
+                </div>
+                <div class="hero-image">
+                    <img src="https://picsum.photos/seed/fashion2/1200/600.jpg" alt="New Collection">
+                </div>
+            </div>
+            <div class="hero-slide">
+                <div class="hero-content">
+                    <h2>Free Shipping on Orders Over $50</h2>
+                    <p>Shop with confidence and save on delivery</p>
+                    <button class="cta-button">Learn More</button>
+                </div>
+                <div class="hero-image">
+                    <img src="https://picsum.photos/seed/fashion3/1200/600.jpg" alt="Free Shipping">
+                </div>
+            </div>
+        </div>
+        <div class="hero-indicators">
+            <span class="indicator active" data-slide="0"></span>
+            <span class="indicator" data-slide="1"></span>
+            <span class="indicator" data-slide="2"></span>
+        </div>
+    </section>
+
+    <!-- Featured Categories -->
+    <section class="featured-categories">
+        <div class="container">
+            <h2>Shop by Category</h2>
+            <div class="category-grid">
+                <div class="category-card" data-category="men">
+                    <img src="https://picsum.photos/seed/men/300/300.jpg" alt="Men's Clothing">
+                    <h3>Men</h3>
+                    <p>Stylish apparel for modern men</p>
+                </div>
+                <div class="category-card" data-category="women">
+                    <img src="https://picsum.photos/seed/women/300/300.jpg" alt="Women's Clothing">
+                    <h3>Women</h3>
+                    <p>Trendy fashion for women</p>
+                </div>
+                <div class="category-card" data-category="kids">
+                    <img src="https://picsum.photos/seed/kids/300/300.jpg" alt="Kids' Clothing">
+                    <h3>Kids</h3>
+                    <p>Comfortable clothes for children</p>
+                </div>
+                <div class="category-card" data-category="jewelry">
+                    <img src="https://picsum.photos/seed/jewelry/300/300.jpg" alt="Jewelry">
+                    <h3>Jewelry</h3>
+                    <p>Elegant accessories and jewelry</p>
+                </div>
+                <div class="category-card" data-category="watches">
+                    <img src="https://picsum.photos/seed/watches/300/300.jpg" alt="Watches">
+                    <h3>Watches</h3>
+                    <p>Premium timepieces</p>
+                </div>
+                <div class="category-card" data-category="footwear">
+                    <img src="https://picsum.photos/seed/footwear/300/300.jpg" alt="Footwear">
+                    <h3>Footwear</h3>
+                    <p>Quality shoes for all occasions</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured-products">
+        <div class="container">
+            <h2>Featured Products</h2>
+            <div class="product-grid" id="featuredProducts">
+                <!-- Products will be dynamically loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <h2>Stay Updated</h2>
+            <p>Subscribe to our newsletter for exclusive deals and fashion tips</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>About StyleHub</h3>
+                    <p>Your premier destination for quality fashion and accessories at affordable prices.</p>
+                    <div class="ceo-info">
+                        <img src="https://picsum.photos/seed/ceo/100/100.jpg" alt="CEO" class="ceo-photo">
+                        <p>Founded with a passion for fashion and customer satisfaction.</p>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="#blog">Fashion Blog</a></li>
+                        <li><a href="#shipping">Shipping Info</a></li>
+                        <li><a href="#returns">Returns</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> 080-6224-0288</li>
+                        <li><i class="fas fa-envelope"></i> imjustokon@gmail.com</li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#support">Support Center</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#linkedin"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 StyleHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse our extensive collection of fashion products including men's, women's, and kids' clothing, jewelry, watches, and footwear.">
+    <meta name="keywords" content="fashion products, clothing, jewelry, watches, footwear, shopping">
+    <title>Products - StyleHub Fashion Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="products.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header Navigation (Same as homepage) -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-top">
+                <div class="contact-info">
+                    <span><i class="fas fa-phone"></i> 080-6224-0288</span>
+                    <span><i class="fas fa-envelope"></i> imjustokon@gmail.com</span>
+                </div>
+                <div class="user-actions">
+                    <a href="#login">Login</a>
+                    <a href="#register">Register</a>
+                </div>
+            </div>
+            <nav class="main-nav">
+                <div class="logo">
+                    <h1><a href="index.html" style="color: #ff6b6b; text-decoration: none;">StyleHub</a></h1>
+                </div>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search for products..." id="searchInput">
+                    <button type="button" id="searchBtn"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="nav-icons">
+                    <a href="#wishlist" class="nav-icon"><i class="fas fa-heart"></i></a>
+                    <a href="#cart" class="nav-icon"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></a>
+                </div>
+            </nav>
+            <div class="category-nav">
+                <ul class="category-list">
+                    <li><a href="products.html?category=men">Men</a></li>
+                    <li><a href="products.html?category=women">Women</a></li>
+                    <li><a href="products.html?category=kids">Kids</a></li>
+                    <li><a href="products.html?category=jewelry">Jewelry</a></li>
+                    <li><a href="products.html?category=watches">Watches</a></li>
+                    <li><a href="products.html?category=footwear">Footwear</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
+        <div class="container">
+            <nav>
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <span id="breadcrumb-category">Products</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section">
+        <div class="container">
+            <div class="products-layout">
+                <!-- Sidebar Filters -->
+                <aside class="filters-sidebar">
+                    <div class="filter-section">
+                        <h3>Categories</h3>
+                        <ul class="category-filters">
+                            <li>
+                                <label>
+                                    <input type="checkbox" value="men" class="category-filter">
+                                    <span>Men</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" value="women" class="category-filter">
+                                    <span>Women</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" value="kids" class="category-filter">
+                                    <span>Kids</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" value="jewelry" class="category-filter">
+                                    <span>Jewelry</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" value="watches" class="category-filter">
+                                    <span>Watches</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" value="footwear" class="category-filter">
+                                    <span>Footwear</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="filter-section">
+                        <h3>Price Range</h3>
+                        <div class="price-filter">
+                            <input type="range" id="minPrice" min="0" max="500" value="0" class="price-range">
+                            <input type="range" id="maxPrice" min="0" max="500" value="500" class="price-range">
+                            <div class="price-display">
+                                <span>$<span id="minPriceDisplay">0</span></span>
+                                <span>-</span>
+                                <span>$<span id="maxPriceDisplay">500</span></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="filter-section">
+                        <h3>Size</h3>
+                        <ul class="size-filters">
+                            <li>
+                                <label>
+                                    <input type="checkbox" value="XS" class="size-filter">
+                                    <span>XS</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" value="S" class="size-filter">
+                                    <span>S</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" value="M" class="size-filter">
+                                    <span>M</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" value="L" class="size-filter">
+                                    <span>L</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" value="XL" class="size-filter">
+                                    <span>XL</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" value="XXL" class="size-filter">
+                                    <span>XXL</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="filter-section">
+                        <h3>Color</h3>
+                        <ul class="color-filters">
+                            <li>
+                                <label>
+                                    <input type="checkbox" value="black" class="color-filter">
+                                    <span class="color-swatch" style="background: #000;"></span>
+                                    <span>Black</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" value="white" class="color-filter">
+                                    <span class="color-swatch" style="background: #fff; border: 1px solid #ddd;"></span>
+                                    <span>White</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" value="red" class="color-filter">
+                                    <span class="color-swatch" style="background: #ff0000;"></span>
+                                    <span>Red</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" value="blue" class="color-filter">
+                                    <span class="color-swatch" style="background: #0000ff;"></span>
+                                    <span>Blue</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" value="green" class="color-filter">
+                                    <span class="color-swatch" style="background: #00ff00;"></span>
+                                    <span>Green</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="filter-section">
+                        <h3>Rating</h3>
+                        <ul class="rating-filters">
+                            <li>
+                                <label>
+                                    <input type="radio" name="rating" value="4" class="rating-filter">
+                                    <span class="stars">★★★★☆ & up</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="radio" name="rating" value="3" class="rating-filter">
+                                    <span class="stars">★★★☆☆ & up</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="radio" name="rating" value="2" class="rating-filter">
+                                    <span class="stars">★★☆☆☆ & up</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <button class="clear-filters" onclick="clearAllFilters()">Clear All Filters</button>
+                </aside>
+
+                <!-- Main Content -->
+                <main class="products-main">
+                    <div class="products-header">
+                        <h1 id="page-title">All Products</h1>
+                        <div class="products-controls">
+                            <div class="results-count">
+                                <span id="results-count">Showing 0 products</span>
+                            </div>
+                            <div class="sort-dropdown">
+                                <select id="sortSelect">
+                                    <option value="featured">Featured</option>
+                                    <option value="price-low">Price: Low to High</option>
+                                    <option value="price-high">Price: High to Low</option>
+                                    <option value="rating">Highest Rated</option>
+                                    <option value="newest">Newest First</option>
+                                </select>
+                            </div>
+                            <div class="view-toggle">
+                                <button class="view-btn active" data-view="grid">
+                                    <i class="fas fa-th"></i>
+                                </button>
+                                <button class="view-btn" data-view="list">
+                                    <i class="fas fa-list"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="products-grid" id="productsGrid">
+                        <!-- Products will be dynamically loaded here -->
+                    </div>
+
+                    <div class="pagination" id="pagination">
+                        <!-- Pagination will be dynamically loaded here -->
+                    </div>
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Same as homepage) -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>About StyleHub</h3>
+                    <p>Your premier destination for quality fashion and accessories at affordable prices.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="blog.html">Fashion Blog</a></li>
+                        <li><a href="#shipping">Shipping Info</a></li>
+                        <li><a href="#returns">Returns</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> 080-6224-0288</li>
+                        <li><i class="fas fa-envelope"></i> imjustokon@gmail.com</li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#support">Support Center</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#linkedin"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 StyleHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="products.js"></script>
+</body>
+</html>
