@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nigerian Fashion Collections - Men, Women, Kids, Accessories Series">
+    <meta name="keywords" content="Nigerian fashion, collections, series, men clothes, women clothes, kids fashion, accessories">
+    <title>Fashion Collections - StyleHub Nigeria</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="collections.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-top">
+                <div class="contact-info">
+                    <span><i class="fas fa-phone"></i> +234 808-6224-0288</span>
+                    <span><i class="fas fa-envelope"></i> stylehub.ng@gmail.com</span>
+                    <span><i class="fas fa-map-marker-alt"></i> Lagos, Nigeria</span>
+                </div>
+                <div class="user-actions">
+                    <div class="user-profile login-required" style="display: none;">
+                        <img src="https://picsum.photos/seed/default-user/32/32.jpg" alt="User" class="user-avatar">
+                        <span class="user-display">User</span>
+                        <div class="user-dropdown">
+                            <a href="#profile">My Profile</a>
+                            <a href="#orders">My Orders</a>
+                            <a href="#wishlist">Wishlist</a>
+                            <a href="#settings">Settings</a>
+                            <a href="#" onclick="logout()">Logout</a>
+                        </div>
+                    </div>
+                    <div class="auth-buttons logout-required">
+                        <a href="login.html" class="login-btn">Login</a>
+                        <a href="login.html" class="register-btn">Register</a>
+                    </div>
+                </div>
+            </div>
+            <nav class="main-nav">
+                <div class="logo">
+                    <h1><span class="nigerian-flag">🇳🇬</span> StyleHub Nigeria</h1>
+                </div>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search for Nigerian fashion..." id="searchInput">
+                    <button type="button" id="searchBtn"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="nav-icons">
+                    <span class="currency-display">₦ Naira</span>
+                    <a href="#wishlist" class="nav-icon login-required" style="display: none;"><i class="fas fa-heart"></i></a>
+                    <a href="cart.html" class="nav-icon"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></a>
+                </div>
+            </nav>
+            <div class="category-nav">
+                <ul class="category-list">
+                    <li><a href="#men">Men</a></li>
+                    <li><a href="#women">Women</a></li>
+                    <li><a href="#kids">Kids</a></li>
+                    <li><a href="#jewelry">Jewelry</a></li>
+                    <li><a href="#watches">Watches</a></li>
+                    <li><a href="#footwear">Footwear</a></li>
+                    <li><a href="#accessories">Accessories</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Collections Hero -->
+    <section class="collections-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Nigerian Fashion Collections</h1>
+                <p>Explore our curated series of traditional and modern Nigerian fashion</p>
+                <div class="search-box">
+                    <input type="text" id="collectionSearch" placeholder="Search for specific collections, items, or sizes...">
+                    <button onclick="searchCollections()"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collections Grid -->
+    <section class="collections-section">
+        <div class="container">
+            <div class="collections-grid">
+                <!-- Men's Collection Series -->
+                <div class="collection-series" data-category="men">
+                    <div class="series-header">
+                        <h2><i class="fas fa-male"></i> Men's Collection Series</h2>
+                        <p>Traditional and contemporary Nigerian men's fashion</p>
+                    </div>
+                    <div class="series-grid">
+                        <div class="series-item" data-series="traditional">
+                            <div class="series-image">
+                                <img src="https://picsum.photos/seed/men-traditional/300/200.jpg" alt="Traditional Wear">
+                                <div class="series-overlay">
+                                    <h3>Traditional Series</h3>
+                                    <p>Agbada, Senator, Native Attire</p>
+                                    <span class="item-count">12 items</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="series-item" data-series="casual">
+                            <div class="series-image">
+                                <img src="https://picsum.photos/seed/men-casual/300/200.jpg" alt="Casual Wear">
+                                <div class="series-overlay">
+                                    <h3>Casual Series</h3>
+                                    <p>Shirts, T-shirts, Jeans</p>
+                                    <span class="item-count">24 items</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="series-item" data-series="formal">
+                            <div class="series-image">
+                                <img src="https://picsum.photos/seed/men-formal/300/200.jpg" alt="Formal Wear">
+                                <div class="series-overlay">
+                                    <h3>Formal Series</h3>
+                                    <p>Suits, Blazers, Office Wear</p>
+                                    <span class="item-count">18 items</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="series-item" data-series="accessories">
+                            <div class="series-image">
+                                <img src="https://picsum.photos/seed/men-accessories/300/200.jpg" alt="Accessories">
+                                <div class="series-overlay">
+                                    <h3>Accessories Series</h3>
+                                    <p>Caps, Belts, Watches, Sunglasses</p>
+                                    <span class="item-count">30 items</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Women's Collection Series -->
+                <div class="collection-series" data-category="women">
+                    <div class="series-header">
+                        <h2><i class="fas fa-female"></i> Women's Collection Series</h2>
+                        <p>Elegant and vibrant Nigerian women's fashion</p>
+                    </div>
+                    <div class="series-grid">
+                        <div class="series-item" data-series="traditional">
+                            <div class="series-image">
+                                <img src="https://picsum.photos/seed/women-traditional/300/200.jpg" alt="Traditional Wear">
+                                <div class="series-overlay">
+                                    <h3>Traditional Series</h3>
+                                    <p>Ankara, Aso-Oke, Gele, Iro</p>
+                                    <span class="item-count">20 items</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="series-item" data-series="modern">
+                            <div class="series-image">
+                                <img src="https://picsum.photos/seed/women-modern/300/200.jpg" alt="Modern Wear">
+                                <div class="series-overlay">
+                                    <h3>Modern Series</h3>
+                                    <p>Kaftan, Gowns, Jumpsuits</p>
+                                    <span class="item-count">28 items</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="series-item" data-series="casual">
+                            <div class="series-image">
+                                <img src="https://picsum.photos/seed/women-casual/300/200.jpg" alt="Casual Wear">
+                                <div class="series-overlay">
+                                    <h3>Casual Series</h3>
+                                    <p>Tops, Skirts, Dresses</p>
+                                    <span class="item-count">35 items</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="series-item" data-series="accessories">
+                            <div class="series-image">
+                                <img src="https://picsum.photos/seed/women-accessories/300/200.jpg" alt="Accessories">
+                                <div class="series-overlay">
+                                    <h3>Accessories Series</h3>
+                                    <p>Jewelry, Bags, Shoes, Scarves</p>
+                                    <span class="item-count">42 items</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kids' Collection Series -->
+                <div class="collection-series" data-category="kids">
+                    <div class="series-header">
+                        <h2><i class="fas fa-child"></i> Kids' Collection Series</h2>
+                        <p>Comfortable and stylish Nigerian kids' fashion</p>
+                    </div>
+                    <div class="series-grid">
+                        <div class="series-item" data-series="traditional">
+                            <div class="series-image">
+                                <img src="https://picsum.photos/seed/kids-traditional/300/200.jpg" alt="Traditional Wear">
+                                <div class="series-overlay">
+                                    <h3>Traditional Series</h3>
+                                    <p>Mini Agbada, Children's Aso-Oke</p>
+                                    <span class="item-count">15 items</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="series-item" data-series="school">
+                            <div class="series-image">
+                                <img src="https://picsum.photos/seed/kids-school/300/200.jpg" alt="School Wear">
+                                <div class="series-overlay">
+                                    <h3>School Series</h3>
+                                    <p>Uniforms, School Bags, Shoes</p>
+                                    <span class="item-count">25 items</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="series-item" data-series="casual">
+                            <div class="series-image">
+                                <img src="https://picsum.photos/seed/kids-casual/300/200.jpg" alt="Casual Wear">
+                                <div class="series-overlay">
+                                    <h3>Casual Series</h3>
+                                    <p>Playwear, Party Outfits</p>
+                                    <span class="item-count">30 items</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="series-item" data-series="accessories">
+                            <div class="series-image">
+                                <img src="https://picsum.photos/seed/kids-accessories/300/200.jpg" alt="Accessories">
+                                <div class="series-overlay">
+                                    <h3>Accessories Series</h3>
+                                    <p>Toys, School Supplies, Caps</p>
+                                    <span class="item-count">18 items</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Accessories Collection Series -->
+                <div class="collection-series" data-category="accessories">
+                    <div class="series-header">
+                        <h2><i class="fas fa-gem"></i> Accessories Collection Series</h2>
+                        <p>Complete your Nigerian look with our accessories</p>
+                    </div>
+                    <div class="series-grid">
+                        <div class="series-item" data-series="caps">
+                            <div class="series-image">
+                                <img src="https://picsum.photos/seed/caps-collection/300/200.jpg" alt="Caps Collection">
+                                <div class="series-overlay">
+                                    <h3>Caps Series</h3>
+                                    <p>Baseball Caps, Traditional Hats</p>
+                                    <span class="item-count">20 items</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="series-item" data-series="belts">
+                            <div class="series-image">
+                                <img src="https://picsum.photos/seed/belts-collection/300/200.jpg" alt="Belts Collection">
+                                <div class="series-overlay">
+                                    <h3>Belts Series</h3>
+                                    <p>Leather Belts, Traditional Belts</p>
+                                    <span class="item-count">15 items</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="series-item" data-series="watches">
+                            <div class="series-image">
+                                <img src="https://picsum.photos/seed/watches-collection/300/200.jpg" alt="Watches Collection">
+                                <div class="series-overlay">
+                                    <h3>Watches Series</h3>
+                                    <p>Luxury Watches, Smart Watches</p>
+                                    <span class="item-count">25 items</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="series-item" data-series="eyewear">
+                            <div class="series-image">
+                                <img src="https://picsum.photos/seed/eyewear-collection/300/200.jpg" alt="Eyewear Collection">
+                                <div class="series-overlay">
+                                    <h3>Eyewear Series</h3>
+                                    <p>Sunglasses, Reading Glasses</p>
+                                    <span class="item-count">18 items</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Series Details Modal -->
+    <div id="seriesModal" class="modal" style="display: none;">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h3 id="modalTitle">Collection Details</h3>
+                <button class="close-modal" onclick="closeSeriesModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="series-details">
+                    <div class="series-info">
+                        <h4 id="seriesName"></h4>
+                        <p id="seriesDescription"></p>
+                        <div class="size-filters">
+                            <h5>Available Sizes:</h5>
+                            <div class="size-options" id="sizeOptions"></div>
+                        </div>
+                        <div class="material-filters">
+                            <h5>Materials:</h5>
+                            <div class="material-options" id="materialOptions"></div>
+                        </div>
+                    </div>
+                    <div class="series-products" id="seriesProducts">
+                        <!-- Products will be loaded here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+    <script src="collections.js"></script>
+</body>
+</html>

@@ -1,6 +1,10 @@
 // Authentication JavaScript
 let users = JSON.parse(localStorage.getItem('users')) || [];
 let currentUser = JSON.parse(sessionStorage.getItem('currentUser')) || null;
+let verificationCode = '';
+let verificationTimer = null;
+let timerSeconds = 60;
+let pendingUser = null;
 
 // Initialize auth page
 document.addEventListener('DOMContentLoaded', function() {
@@ -24,6 +28,7 @@ function loadSampleUsers() {
                 email: 'demo@stylehub.ng',
                 phone: '+234 808-6224-0288',
                 password: 'demo123',
+                verified: true,
                 createdAt: new Date().toISOString(),
                 orders: [],
                 wishlist: []
@@ -31,6 +36,52 @@ function loadSampleUsers() {
         ];
         localStorage.setItem('users', JSON.stringify(users));
     }
+}
+
+// Phone validation
+function validatePhone(input) {
+    const phone = input.value;
+    const phoneError = document.getElementById('phoneError');
+    const phoneRegex = /^\+234[0-9]{10}$/;
+    
+    if (!phoneRegex.test(phone)) {
+        phoneError.textContent = 'Please enter a valid Nigerian phone number (+234 XXX XXX XXXX)';
+        input.style.borderColor = '#dc3545';
+        return false;
+    } else {
+        phoneError.textContent = '';
+        input.style.borderColor = '#28a745';
+        return true;
+    }
+}
+
+// Password strength checker
+function checkPasswordStrength(password) {
+    const strengthDiv = document.getElementById('passwordStrength');
+    let strength = 0;
+    
+    if (password.length >= 6) strength++;
+    if (password.match(/[a-z]+/)) strength++;
+    if (password.match(/[A-Z]+/)) strength++;
+    if (password.match(/[0-9]+/)) strength++;
+    if (password.match(/[$@#&!]+/)) strength++;
+    
+    let strengthClass = '';
+    let strengthText = '';
+    
+    if (strength <= 2) {
+        strengthClass = 'strength-weak';
+        strengthText = 'Weak';
+    } else if (strength <= 4) {
+        strengthClass = 'strength-medium';
+        strengthText = 'Medium';
+    } else {
+        strengthClass = 'strength-strong';
+        strengthText = 'Strong';
+    }
+    
+    strengthDiv.innerHTML = `<div class="password-strength-bar ${strengthClass}"></div>`;
+    return strength;
 }
 
 // Switch between login and register tabs
@@ -126,7 +177,7 @@ function handleLogin(event) {
     }
 }
 
-// Handle registration
+// Handle registration with phone verification
 function handleRegister(event) {
     event.preventDefault();
     
@@ -136,6 +187,7 @@ function handleRegister(event) {
     const password = document.getElementById('registerPassword').value;
     const confirmPassword = document.getElementById('confirmPassword').value;
     const agreeTerms = document.getElementById('agreeTerms').checked;
+    const referralCode = document.getElementById('referralCode').value;
     
     // Clear previous messages
     clearMessages();
@@ -146,13 +198,18 @@ function handleRegister(event) {
         return;
     }
     
+    if (!validatePhone(document.getElementById('registerPhone'))) {
+        showMessage('Please enter a valid Nigerian phone number', 'error');
+        return;
+    }
+    
     if (password !== confirmPassword) {
         showMessage('Passwords do not match', 'error');
         return;
     }
     
-    if (password.length < 6) {
-        showMessage('Password must be at least 6 characters', 'error');
+    if (checkPasswordStrength(password) < 3) {
+        showMessage('Password is too weak. Please include uppercase, lowercase, numbers, and special characters', 'error');
         return;
     }
     
@@ -167,22 +224,128 @@ function handleRegister(event) {
         return;
     }
     
-    // Create new user
-    const newUser = {
+    if (users.find(u => u.phone === phone)) {
+        showMessage('An account with this phone number already exists', 'error');
+        return;
+    }
+    
+    // Store pending user data
+    pendingUser = {
         id: Date.now(),
         name: fullName,
         email: email,
         phone: phone,
         password: password,
+        referralCode: referralCode,
         createdAt: new Date().toISOString(),
         orders: [],
         wishlist: [],
         addresses: [],
-        paymentMethods: []
+        paymentMethods: [],
+        verified: false
     };
     
-    users.push(newUser);
+    // Send verification code
+    sendVerificationCode(phone);
+}
+
+// Send verification code
+function sendVerificationCode(phone) {
+    // Generate 6-digit code
+    verificationCode = Math.floor(100000 + Math.random() * 900000).toString();
+    
+    // Store code in session (in real app, this would be sent via SMS)
+    sessionStorage.setItem('verificationCode', verificationCode);
+    sessionStorage.setItem('verificationPhone', phone);
+    
+    // Show verification modal
+    document.getElementById('verificationPhone').textContent = phone;
+    document.getElementById('verificationModal').style.display = 'flex';
+    
+    // Start timer
+    startVerificationTimer();
+    
+    // For demo, show the code in console
+    console.log('Verification Code:', verificationCode);
+    showMessage(`Verification code sent to ${phone}. Check console for demo code.`, 'info');
+}
+
+// Start verification timer
+function startVerificationTimer() {
+    timerSeconds = 60;
+    const timerElement = document.getElementById('timer');
+    const resendBtn = document.querySelector('.resend-btn');
+    
+    resendBtn.disabled = true;
+    
+    verificationTimer = setInterval(() => {
+        timerSeconds--;
+        timerElement.textContent = timerSeconds;
+        
+        if (timerSeconds <= 0) {
+            clearInterval(verificationTimer);
+            resendBtn.disabled = false;
+            timerElement.textContent = '0';
+        }
+    }, 1000);
+}
+
+// Move to next input
+function moveToNext(input, index) {
+    const inputs = document.querySelectorAll('.code-input');
+    
+    if (input.value.length === 1) {
+        input.classList.add('filled');
+        if (index < inputs.length - 1) {
+            inputs[index + 1].focus();
+        }
+    } else {
+        input.classList.remove('filled');
+    }
+    
+    // Auto-verify when all inputs are filled
+    const allFilled = Array.from(inputs).every(inp => inp.value.length === 1);
+    if (allFilled) {
+        setTimeout(verifyCode, 500);
+    }
+}
+
+// Verify code
+function verifyCode() {
+    const inputs = document.querySelectorAll('.code-input');
+    const enteredCode = Array.from(inputs).map(input => input.value).join('');
+    const storedCode = sessionStorage.getItem('verificationCode');
+    
+    if (enteredCode === storedCode) {
+        // Code verified, complete registration
+        completeRegistration();
+    } else {
+        showMessage('Invalid verification code', 'error');
+        // Clear inputs
+        inputs.forEach(input => {
+            input.value = '';
+            input.classList.remove('filled');
+        });
+        inputs[0].focus();
+    }
+}
+
+// Complete registration
+function completeRegistration() {
+    if (!pendingUser) return;
+    
+    // Mark as verified
+    pendingUser.verified = true;
+    
+    // Add to users array
+    users.push(pendingUser);
     localStorage.setItem('users', JSON.stringify(users));
+    
+    // Clear pending user
+    pendingUser = null;
+    
+    // Close modal
+    closeVerificationModal();
     
     showMessage('Registration successful! Please login...', 'success');
     
@@ -190,8 +353,37 @@ function handleRegister(event) {
     setTimeout(() => {
         switchTab('login');
         // Pre-fill email
-        document.getElementById('loginEmail').value = email;
+        document.getElementById('loginEmail').value = users[users.length - 1].email;
     }, 1500);
+}
+
+// Resend verification code
+function resendVerificationCode() {
+    const phone = sessionStorage.getItem('verificationPhone');
+    if (phone) {
+        sendVerificationCode(phone);
+        showMessage('Verification code resent', 'success');
+    }
+}
+
+// Close verification modal
+function closeVerificationModal() {
+    document.getElementById('verificationModal').style.display = 'none';
+    
+    // Clear timer
+    if (verificationTimer) {
+        clearInterval(verificationTimer);
+    }
+    
+    // Clear inputs
+    document.querySelectorAll('.code-input').forEach(input => {
+        input.value = '';
+        input.classList.remove('filled');
+    });
+    
+    // Clear session
+    sessionStorage.removeItem('verificationCode');
+    sessionStorage.removeItem('verificationPhone');
 }
 
 // Show message
