@@ -452,6 +452,35 @@ body {
     text-decoration: line-through;
 }
 
+/* Nigerian Flag and Currency Display */
+.nigerian-flag {
+    font-size: 24px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.currency-display {
+    background: #008751;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 14px;
+    box-shadow: 0 2px 8px rgba(0, 135, 81, 0.3);
+}
+
+/* Nigerian Theme Colors */
+.product-badge.traditional,
+.product-badge.ankara,
+.product-badge.cultural {
+    background: linear-gradient(135deg, #008751 0%, #00A652 100%);
+}
+
+.product-badge.handmade,
+.product-badge.local {
+    background: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%);
+}
+
 /* Enhanced Product Image Styles */
 .color-options {
     position: absolute;

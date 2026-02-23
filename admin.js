@@ -6,8 +6,24 @@ let currentSection = 'dashboard';
 let currentPage = 1;
 let itemsPerPage = 10;
 
+// CEO Profile Management
+let ceoProfile = {
+    name: 'StyleHub CEO',
+    email: 'ceo@stylehub.ng',
+    phone: '+234 808-6224-0288',
+    bio: 'Leading Nigerian fashion with premium quality and authentic designs.',
+    avatar: 'https://picsum.photos/seed/ceo-profile/200/200.jpg',
+    social: {
+        instagram: '@stylehub_ng',
+        twitter: '@stylehub_ng',
+        facebook: 'StyleHub Nigeria',
+        linkedin: 'StyleHub Nigeria'
+    }
+};
+
 // Initialize admin dashboard
 document.addEventListener('DOMContentLoaded', function() {
+    loadCEOProfile();
     loadOrders();
     loadProducts();
     loadCustomers();
@@ -861,6 +877,96 @@ function logout() {
         sessionStorage.removeItem('adminLoggedIn');
         window.location.href = 'index.html';
     }
+}
+
+// CEO Profile Management Functions
+
+// Load CEO profile
+function loadCEOProfile() {
+    const saved = localStorage.getItem('ceoProfile');
+    if (saved) {
+        ceoProfile = JSON.parse(saved);
+        updateCEOProfileUI();
+    }
+}
+
+// Update CEO Profile UI
+function updateCEOProfileUI() {
+    const fullnameEl = document.getElementById('ceo-fullname');
+    const emailEl = document.getElementById('ceo-email');
+    const phoneEl = document.getElementById('ceo-phone');
+    const bioEl = document.getElementById('ceo-bio');
+    const instagramEl = document.getElementById('ceo-instagram');
+    const twitterEl = document.getElementById('ceo-twitter');
+    const facebookEl = document.getElementById('ceo-facebook');
+    const linkedinEl = document.getElementById('ceo-linkedin');
+    
+    if (fullnameEl) fullnameEl.value = ceoProfile.name;
+    if (emailEl) emailEl.value = ceoProfile.email;
+    if (phoneEl) phoneEl.value = ceoProfile.phone;
+    if (bioEl) bioEl.value = ceoProfile.bio;
+    if (instagramEl) instagramEl.value = ceoProfile.social.instagram;
+    if (twitterEl) twitterEl.value = ceoProfile.social.twitter;
+    if (facebookEl) facebookEl.value = ceoProfile.social.facebook;
+    if (linkedinEl) linkedinEl.value = ceoProfile.social.linkedin;
+    
+    // Update avatars
+    const ceoAvatar = document.getElementById('ceo-avatar');
+    const profileAvatar = document.getElementById('profile-ceo-avatar');
+    const miniAvatar = document.getElementById('mini-ceo-avatar');
+    
+    if (ceoAvatar) ceoAvatar.src = ceoProfile.avatar;
+    if (profileAvatar) profileAvatar.src = ceoProfile.avatar;
+    if (miniAvatar) miniAvatar.src = ceoProfile.avatar;
+}
+
+// Update CEO Avatar
+function updateCEOAvatar(input) {
+    if (input.files && input.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            ceoProfile.avatar = e.target.result;
+            updateCEOProfileUI();
+            saveCEOProfile();
+            showNotification('CEO avatar updated successfully!', 'success');
+        };
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+// Update Profile CEO Avatar
+function updateProfileCEOAvatar(input) {
+    updateCEOAvatar(input);
+}
+
+// Save CEO Profile
+function saveCEOProfile() {
+    const fullnameEl = document.getElementById('ceo-fullname');
+    const emailEl = document.getElementById('ceo-email');
+    const phoneEl = document.getElementById('ceo-phone');
+    const bioEl = document.getElementById('ceo-bio');
+    const instagramEl = document.getElementById('ceo-instagram');
+    const twitterEl = document.getElementById('ceo-twitter');
+    const facebookEl = document.getElementById('ceo-facebook');
+    const linkedinEl = document.getElementById('ceo-linkedin');
+    
+    if (fullnameEl) ceoProfile.name = fullnameEl.value;
+    if (emailEl) ceoProfile.email = emailEl.value;
+    if (phoneEl) ceoProfile.phone = phoneEl.value;
+    if (bioEl) ceoProfile.bio = bioEl.value;
+    if (instagramEl) ceoProfile.social.instagram = instagramEl.value;
+    if (twitterEl) ceoProfile.social.twitter = twitterEl.value;
+    if (facebookEl) ceoProfile.social.facebook = facebookEl.value;
+    if (linkedinEl) ceoProfile.social.linkedin = linkedinEl.value;
+    
+    localStorage.setItem('ceoProfile', JSON.stringify(ceoProfile));
+    showNotification('CEO profile saved successfully!', 'success');
+}
+
+// Toggle CEO Profile
+function toggleCEOProfile() {
+    // This function can be used to show/hide CEO profile modal
+    console.log('CEO Profile toggled');
 }
 
 // Check admin authentication

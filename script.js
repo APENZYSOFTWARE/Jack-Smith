@@ -1,103 +1,103 @@
-// Enhanced product data with multiple images and detailed specifications
+// Nigerian Fashion Product Data with Naira Prices
 const products = [
     {
         id: 1,
-        name: "Premium Cotton T-Shirt",
+        name: "Nigerian Agbada Set",
         category: "men",
-        subcategory: "casual",
-        price: 29.99,
-        originalPrice: 49.99,
+        subcategory: "traditional",
+        price: 45000,
+        originalPrice: 65000,
         images: {
-            main: "https://picsum.photos/seed/men-casual-tshirt-main/800/800.jpg",
+            main: "https://picsum.photos/seed/nigerian-agbada-main/800/800.jpg",
             gallery: [
-                "https://picsum.photos/seed/men-casual-tshirt-1/400/400.jpg",
-                "https://picsum.photos/seed/men-casual-tshirt-2/400/400.jpg",
-                "https://picsum.photos/seed/men-casual-tshirt-3/400/400.jpg"
+                "https://picsum.photos/seed/nigerian-agbada-1/400/400.jpg",
+                "https://picsum.photos/seed/nigerian-agbada-2/400/400.jpg",
+                "https://picsum.photos/seed/nigerian-agbada-3/400/400.jpg"
             ],
-            thumbnail: "https://picsum.photos/seed/men-casual-tshirt-thumb/150/150.jpg"
+            thumbnail: "https://picsum.photos/seed/nigerian-agbada-thumb/150/150.jpg"
         },
-        colors: ["#FF6B6B", "#4ECDC4", "#45B7D1", "#96CEB4"],
-        sizes: ["XS", "S", "M", "L", "XL", "XXL"],
-        rating: 4.5,
-        reviews: 128,
-        badge: "Sale",
-        description: "Premium quality cotton t-shirt perfect for casual wear. Made with 100% organic cotton for maximum comfort.",
-        material: "100% Organic Cotton",
-        care: "Machine washable"
-    },
-    {
-        id: 2,
-        name: "Elegant Summer Dress",
-        category: "women",
-        subcategory: "elegant",
-        price: 79.99,
-        originalPrice: 129.99,
-        images: {
-            main: "https://picsum.photos/seed/women-elegant-dress-main/800/800.jpg",
-            gallery: [
-                "https://picsum.photos/seed/women-elegant-dress-1/400/400.jpg",
-                "https://picsum.photos/seed/women-elegant-dress-2/400/400.jpg",
-                "https://picsum.photos/seed/women-elegant-dress-3/400/400.jpg"
-            ],
-            thumbnail: "https://picsum.photos/seed/women-elegant-dress-thumb/150/150.jpg"
-        },
-        colors: ["#FF6B6B", "#F7DC6F", "#BB8FCE", "#85C1E2"],
-        sizes: ["XS", "S", "M", "L", "XL"],
+        colors: ["#8B4513", "#2C3E50", "#FFD700", "#4B0082"],
+        sizes: ["S", "M", "L", "XL", "XXL"],
         rating: 4.8,
-        reviews: 89,
-        badge: "New",
-        description: "Stunning elegant summer dress designed for special occasions. Features premium fabric and exquisite craftsmanship.",
-        material: "Silk Blend",
+        reviews: 156,
+        badge: "Traditional",
+        description: "Premium quality Nigerian Agbada set perfect for weddings and special occasions. Made with authentic Nigerian fabrics.",
+        material: "Nigerian Brocade & Cotton",
         care: "Dry clean only"
     },
     {
-        id: 3,
-        name: "Kids Sports Set",
-        category: "kids",
-        subcategory: "casual",
-        price: 39.99,
-        originalPrice: 59.99,
+        id: 2,
+        name: "Ankara Print Gown",
+        category: "women",
+        subcategory: "traditional",
+        price: 28000,
+        originalPrice: 42000,
         images: {
-            main: "https://picsum.photos/seed/kids-sports-set-main/800/800.jpg",
+            main: "https://picsum.photos/seed/ankara-gown-main/800/800.jpg",
             gallery: [
-                "https://picsum.photos/seed/kids-sports-set-1/400/400.jpg",
-                "https://picsum.photos/seed/kids-sports-set-2/400/400.jpg",
-                "https://picsum.photos/seed/kids-sports-set-3/400/400.jpg"
+                "https://picsum.photos/seed/ankara-gown-1/400/400.jpg",
+                "https://picsum.photos/seed/ankara-gown-2/400/400.jpg",
+                "https://picsum.photos/seed/ankara-gown-3/400/400.jpg"
             ],
-            thumbnail: "https://picsum.photos/seed/kids-sports-set-thumb/150/150.jpg"
+            thumbnail: "https://picsum.photos/seed/ankara-gown-thumb/150/150.jpg"
         },
-        colors: ["#FF6B6B", "#52D681", "#F4D03F", "#A569BD"],
+        colors: ["#FF6B6B", "#F39C12", "#8E44AD", "#16A085"],
+        sizes: ["XS", "S", "M", "L", "XL"],
+        rating: 4.7,
+        reviews: 203,
+        badge: "Ankara",
+        description: "Beautiful Ankara print gown showcasing vibrant Nigerian patterns. Perfect for church and social events.",
+        material: "100% Ankara Cotton",
+        care: "Hand wash recommended"
+    },
+    {
+        id: 3,
+        name: "Kids Aso-Oke Outfit",
+        category: "kids",
+        subcategory: "traditional",
+        price: 22000,
+        originalPrice: 35000,
+        images: {
+            main: "https://picsum.photos/seed/kids-asooke-main/800/800.jpg",
+            gallery: [
+                "https://picsum.photos/seed/kids-asooke-1/400/400.jpg",
+                "https://picsum.photos/seed/kids-asooke-2/400/400.jpg",
+                "https://picsum.photos/seed/kids-asooke-3/400/400.jpg"
+            ],
+            thumbnail: "https://picsum.photos/seed/kids-asooke-thumb/150/150.jpg"
+        },
+        colors: ["#FFD700", "#FF6B6B", "#4ECDC4", "#A569BD"],
         sizes: ["2T", "3T", "4T", "5T", "6T"],
-        rating: 4.6,
-        reviews: 45,
-        badge: "Popular",
-        description: "Fun and colorful sports set for active kids. Made with breathable, durable fabric.",
-        material: "Polyester-Cotton Blend",
-        care: "Machine washable"
+        rating: 4.9,
+        reviews: 89,
+        badge: "Cultural",
+        description: "Traditional Aso-Oke outfit for children's cultural events and celebrations.",
+        material: "Hand-woven Aso-Oke",
+        care: "Dry clean only"
     },
     {
         id: 4,
-        name: "Diamond Necklace",
+        name: "Nigerian Beaded Necklace",
         category: "jewelry",
-        subcategory: "luxury",
-        price: 299.99,
-        originalPrice: 499.99,
+        subcategory: "traditional",
+        price: 15000,
+        originalPrice: 25000,
         images: {
-            main: "https://picsum.photos/seed/diamond-necklace-main/800/800.jpg",
+            main: "https://picsum.photos/seed/beaded-necklace-main/800/800.jpg",
             gallery: [
-                "https://picsum.photos/seed/diamond-necklace-1/400/400.jpg",
-                "https://picsum.photos/seed/diamond-necklace-2/400/400.jpg",
-                "https://picsum.photos/seed/diamond-necklace-3/400/400.jpg"
+                "https://picsum.photos/seed/beaded-necklace-1/400/400.jpg",
+                "https://picsum.photos/seed/beaded-necklace-2/400/400.jpg",
+                "https://picsum.photos/seed/beaded-necklace-3/400/400.jpg"
             ],
-            thumbnail: "https://picsum.photos/seed/diamond-necklace-thumb/150/150.jpg"
+            thumbnail: "https://picsum.photos/seed/beaded-necklace-thumb/150/150.jpg"
         },
-        colors: ["#FFD700", "#C0C0C0", "#E5E4E2"],
+        colors: ["#FFD700", "#C0C0C0", "#FF6B6B"],
         sizes: ["One Size"],
-        rating: 5.0,
-        reviews: 23,
-        badge: "Luxury",
-        description: "Exquisite diamond necklace crafted with precision and care. Perfect for special occasions.",
-        material: "18k Gold with Diamonds",
+        rating: 4.6,
+        reviews: 67,
+        badge: "Handmade",
+        description: "Authentic Nigerian beaded necklace crafted by local artisans.",
+        material: "Glass Beads & Thread",
         care: "Store in jewelry box"
     },
     {
@@ -105,8 +105,8 @@ const products = [
         name: "Smart Watch Pro",
         category: "watches",
         subcategory: "tech",
-        price: 199.99,
-        originalPrice: 299.99,
+        price: 85000,
+        originalPrice: 120000,
         images: {
             main: "https://picsum.photos/seed/smartwatch-pro-main/800/800.jpg",
             gallery: [
@@ -127,111 +127,111 @@ const products = [
     },
     {
         id: 6,
-        name: "Running Shoes",
+        name: "Nigerian Leather Sandals",
         category: "footwear",
-        subcategory: "sports",
-        price: 89.99,
-        originalPrice: 139.99,
+        subcategory: "traditional",
+        price: 18000,
+        originalPrice: 28000,
         images: {
-            main: "https://picsum.photos/seed/running-shoes-main/800/800.jpg",
+            main: "https://picsum.photos/seed/leather-sandals-main/800/800.jpg",
             gallery: [
-                "https://picsum.photos/seed/running-shoes-1/400/400.jpg",
-                "https://picsum.photos/seed/running-shoes-2/400/400.jpg",
-                "https://picsum.photos/seed/running-shoes-3/400/400.jpg"
+                "https://picsum.photos/seed/leather-sandals-1/400/400.jpg",
+                "https://picsum.photos/seed/leather-sandals-2/400/400.jpg",
+                "https://picsum.photos/seed/leather-sandals-3/400/400.jpg"
             ],
-            thumbnail: "https://picsum.photos/seed/running-shoes-thumb/150/150.jpg"
+            thumbnail: "https://picsum.photos/seed/leather-sandals-thumb/150/150.jpg"
         },
-        colors: ["#000000", "#FFFFFF", "#FF6B6B", "#4ECDC4"],
-        sizes: ["7", "8", "9", "10", "11", "12"],
-        rating: 4.4,
-        reviews: 203,
-        badge: "Sport",
-        description: "Professional running shoes designed for maximum performance and comfort.",
-        material: "Mesh & Rubber Sole",
-        care: "Spot clean only"
+        colors: ["#8B4513", "#2C3E50", "#000000", "#A0522D"],
+        sizes: ["38", "39", "40", "41", "42", "43", "44", "45"],
+        rating: 4.5,
+        reviews: 124,
+        badge: "Handcrafted",
+        description: "Handcrafted Nigerian leather sandals perfect for traditional and modern wear.",
+        material: "Genuine Nigerian Leather",
+        care: "Leather polish recommended"
     },
     {
         id: 7,
-        name: "Men's Formal Suit",
+        name: "Senator Style Suit",
         category: "men",
         subcategory: "formal",
-        price: 299.99,
-        originalPrice: 449.99,
+        price: 55000,
+        originalPrice: 75000,
         images: {
-            main: "https://picsum.photos/seed/men-formal-suit-main/800/800.jpg",
+            main: "https://picsum.photos/seed/senator-suit-main/800/800.jpg",
             gallery: [
-                "https://picsum.photos/seed/men-formal-suit-1/400/400.jpg",
-                "https://picsum.photos/seed/men-formal-suit-2/400/400.jpg",
-                "https://picsum.photos/seed/men-formal-suit-3/400/400.jpg"
+                "https://picsum.photos/seed/senator-suit-1/400/400.jpg",
+                "https://picsum.photos/seed/senator-suit-2/400/400.jpg",
+                "https://picsum.photos/seed/senator-suit-3/400/400.jpg"
             ],
-            thumbnail: "https://picsum.photos/seed/men-formal-suit-thumb/150/150.jpg"
+            thumbnail: "https://picsum.photos/seed/senator-suit-thumb/150/150.jpg"
         },
         colors: ["#2C3E50", "#1C2833", "#5D6D7E"],
         sizes: ["S", "M", "L", "XL", "XXL"],
         rating: 4.8,
-        reviews: 67,
+        reviews: 98,
         badge: "Premium",
-        description: "Sophisticated men's formal suit perfect for business meetings and special events.",
-        material: "Wool Blend",
+        description: "Classic Nigerian Senator style suit perfect for business meetings and formal events.",
+        material: "Premium Nigerian Wool",
         care: "Dry clean only"
     },
     {
         id: 8,
-        name: "Women's Trendy Jumpsuit",
+        name: "Modern Kaftan Dress",
         category: "women",
-        subcategory: "trendy",
-        price: 119.99,
-        originalPrice: 179.99,
+        subcategory: "modern",
+        price: 32000,
+        originalPrice: 48000,
         images: {
-            main: "https://picsum.photos/seed/women-jumpsuit-main/800/800.jpg",
+            main: "https://picsum.photos/seed/kaftan-dress-main/800/800.jpg",
             gallery: [
-                "https://picsum.photos/seed/women-jumpsuit-1/400/400.jpg",
-                "https://picsum.photos/seed/women-jumpsuit-2/400/400.jpg",
-                "https://picsum.photos/seed/women-jumpsuit-3/400/400.jpg"
+                "https://picsum.photos/seed/kaftan-dress-1/400/400.jpg",
+                "https://picsum.photos/seed/kaftan-dress-2/400/400.jpg",
+                "https://picsum.photos/seed/kaftan-dress-3/400/400.jpg"
             ],
-            thumbnail: "https://picsum.photos/seed/women-jumpsuit-thumb/150/150.jpg"
+            thumbnail: "https://picsum.photos/seed/kaftan-dress-thumb/150/150.jpg"
         },
         colors: ["#FF6B6B", "#F39C12", "#8E44AD", "#16A085"],
         sizes: ["XS", "S", "M", "L", "XL"],
         rating: 4.6,
-        reviews: 92,
-        badge: "Trending",
-        description: "Fashionable jumpsuit that combines comfort with modern style.",
-        material: "Cotton Blend",
+        reviews: 145,
+        badge: "Modern",
+        description: "Contemporary Kaftan dress blending Nigerian traditional style with modern fashion.",
+        material: "Premium Cotton Blend",
         care: "Machine washable"
     },
     {
         id: 9,
-        name: "Kids Party Dress",
+        name: "Kids School Uniform Set",
         category: "kids",
-        subcategory: "formal",
-        price: 49.99,
-        originalPrice: 79.99,
+        subcategory: "school",
+        price: 15000,
+        originalPrice: 22000,
         images: {
-            main: "https://picsum.photos/seed/kids-party-dress-main/800/800.jpg",
+            main: "https://picsum.photos/seed/school-uniform-main/800/800.jpg",
             gallery: [
-                "https://picsum.photos/seed/kids-party-dress-1/400/400.jpg",
-                "https://picsum.photos/seed/kids-party-dress-2/400/400.jpg",
-                "https://picsum.photos/seed/kids-party-dress-3/400/400.jpg"
+                "https://picsum.photos/seed/school-uniform-1/400/400.jpg",
+                "https://picsum.photos/seed/school-uniform-2/400/400.jpg",
+                "https://picsum.photos/seed/school-uniform-3/400/400.jpg"
             ],
-            thumbnail: "https://picsum.photos/seed/kids-party-dress-thumb/150/150.jpg"
+            thumbnail: "https://picsum.photos/seed/school-uniform-thumb/150/150.jpg"
         },
-        colors: ["#FFB6C1", "#DDA0DD", "#98FB98", "#87CEEB"],
+        colors: ["#FFFFFF", "#0000FF", "#008000"],
         sizes: ["2T", "3T", "4T", "5T", "6T", "7T"],
-        rating: 4.7,
-        reviews: 38,
-        badge: "Cute",
-        description: "Adorable party dress for kids' special occasions.",
-        material: "Cotton & Tulle",
-        care: "Hand wash recommended"
+        rating: 4.4,
+        reviews: 78,
+        badge: "School",
+        description: "Durable and comfortable school uniform set for Nigerian primary schools.",
+        material: "Polyester-Cotton Blend",
+        care: "Machine washable"
     },
     {
         id: 10,
         name: "Fashion Sunglasses",
         category: "accessories",
         subcategory: "eyewear",
-        price: 59.99,
-        originalPrice: 89.99,
+        price: 12000,
+        originalPrice: 18000,
         images: {
             main: "https://picsum.photos/seed/fashion-sunglasses-main/800/800.jpg",
             gallery: [
@@ -244,19 +244,19 @@ const products = [
         colors: ["#000000", "#8B4513", "#FFD700", "#C0C0C0"],
         sizes: ["One Size"],
         rating: 4.5,
-        reviews: 78,
+        reviews: 89,
         badge: "Stylish",
-        description: "Trendy sunglasses with UV protection and modern design.",
+        description: "Trendy sunglasses with UV protection perfect for Nigerian sun.",
         material: "Polarized Lenses",
         care: "Clean with microfiber cloth"
     },
     {
         id: 11,
-        name: "Leather Belt",
+        name: "Nigerian Leather Belt",
         category: "accessories",
         subcategory: "belts",
-        price: 39.99,
-        originalPrice: 59.99,
+        price: 8000,
+        originalPrice: 12000,
         images: {
             main: "https://picsum.photos/seed/leather-belt-main/800/800.jpg",
             gallery: [
@@ -269,34 +269,34 @@ const products = [
         colors: ["#8B4513", "#2C3E50", "#000000", "#A0522D"],
         sizes: ["S", "M", "L", "XL"],
         rating: 4.3,
-        reviews: 45,
-        badge: "Classic",
-        description: "Genuine leather belt with elegant buckle design.",
-        material: "Genuine Leather",
+        reviews: 56,
+        badge: "Handmade",
+        description: "Genuine Nigerian leather belt with traditional buckle design.",
+        material: "Genuine Nigerian Leather",
         care: "Leather conditioner recommended"
     },
     {
         id: 12,
-        name: "Fashion Cap",
+        name: "Nigerian Baseball Cap",
         category: "accessories",
         subcategory: "headwear",
-        price: 24.99,
-        originalPrice: 34.99,
+        price: 6000,
+        originalPrice: 9000,
         images: {
-            main: "https://picsum.photos/seed/fashion-cap-main/800/800.jpg",
+            main: "https://picsum.photos/seed/nigerian-cap-main/800/800.jpg",
             gallery: [
-                "https://picsum.photos/seed/fashion-cap-1/400/400.jpg",
-                "https://picsum.photos/seed/fashion-cap-2/400/400.jpg",
-                "https://picsum.photos/seed/fashion-cap-3/400/400.jpg"
+                "https://picsum.photos/seed/nigerian-cap-1/400/400.jpg",
+                "https://picsum.photos/seed/nigerian-cap-2/400/400.jpg",
+                "https://picsum.photos/seed/nigerian-cap-3/400/400.jpg"
             ],
-            thumbnail: "https://picsum.photos/seed/fashion-cap-thumb/150/150.jpg"
+            thumbnail: "https://picsum.photos/seed/nigerian-cap-thumb/150/150.jpg"
         },
-        colors: ["#FF6B6B", "#4ECDC4", "#45B7D1", "#000000"],
+        colors: ["#008751", "#FFFFFF", "#000000", "#FF6B6B"],
         sizes: ["One Size"],
         rating: 4.4,
-        reviews: 56,
-        badge: "Casual",
-        description: "Stylish baseball cap with adjustable strap.",
+        reviews: 67,
+        badge: "Local",
+        description: "Stylish Nigerian-themed baseball cap with adjustable strap.",
         material: "Cotton Twill",
         care: "Spot clean only"
     }
@@ -386,8 +386,8 @@ function createProductCard(product) {
         <div class="product-info">
             <h3 class="product-title">${product.name}</h3>
             <div class="product-price">
-                <span class="current-price">$${product.price}</span>
-                <span class="original-price">$${product.originalPrice}</span>
+                <span class="current-price">${formatPrice(product.price)}</span>
+                <span class="original-price">${formatPrice(product.originalPrice)}</span>
             </div>
             <div class="product-rating">
                 <div class="stars">${generateStars(product.rating)}</div>
@@ -403,6 +403,11 @@ function createProductCard(product) {
         </div>
     `;
     return card;
+}
+
+// Format price in Naira
+function formatPrice(price) {
+    return `₦${price.toLocaleString('en-NG')}`;
 }
 
 // Generate star rating
@@ -495,8 +500,8 @@ function showGalleryModal(product) {
                 <div class="gallery-info">
                     <h2>${product.name}</h2>
                     <div class="gallery-price">
-                        <span class="current-price">$${product.price}</span>
-                        <span class="original-price">$${product.originalPrice}</span>
+                        <span class="current-price">${formatPrice(product.price)}</span>
+                        <span class="original-price">${formatPrice(product.originalPrice)}</span>
                     </div>
                     <div class="gallery-colors">
                         <h4>Available Colors:</h4>
