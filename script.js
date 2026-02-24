@@ -654,6 +654,19 @@ function closeModal() {
     }
 }
 
+// Logout function
+function logout() {
+    // Clear session
+    sessionStorage.removeItem('currentUser');
+    
+    // Clear any user-specific data
+    localStorage.removeItem('userCart');
+    localStorage.removeItem('userWishlist');
+    
+    // Redirect to login page
+    window.location.href = 'login.html';
+}
+
 // Update cart count
 function updateCartCount() {
     const cartCount = document.querySelector('.cart-count');
